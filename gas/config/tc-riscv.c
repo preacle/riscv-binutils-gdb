@@ -187,10 +187,6 @@ riscv_set_arch (const char *s)
 	riscv_add_subset ("e");
 	riscv_add_subset ("i");
 	riscv_set_rve (TRUE);
-
-	if (xlen > 32)
-	  as_fatal ("-march=%s: rv%de is not a valid base ISA", s, xlen);
-
 	break;
 
       case 'g':
