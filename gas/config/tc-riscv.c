@@ -596,6 +596,8 @@ validate_riscv_insn (const struct riscv_opcode *opc)
       case 'm':	USE_BITS (OP_MASK_RM,		OP_SH_RM);	break;
       case 's':	USE_BITS (OP_MASK_RS1,		OP_SH_RS1);	break;
       case 't':	USE_BITS (OP_MASK_RS2,		OP_SH_RS2);	break;
+//#change
+      case 'r':	USE_BITS (OP_MASK_RS3,		OP_SH_RS3);	break;
       case 'P':	USE_BITS (OP_MASK_PRED,		OP_SH_PRED); break;
       case 'Q':	USE_BITS (OP_MASK_SUCC,		OP_SH_SUCC); break;
       case 'o':
@@ -1544,6 +1546,8 @@ rvc_lui:
 	    case 'd':		/* Destination register.  */
 	    case 's':		/* Source register.  */
 	    case 't':		/* Target register.  */
+//#change
+            case 'r':
 	      if (reg_lookup (&s, RCLASS_GPR, &regno))
 		{
 		  c = *args;
